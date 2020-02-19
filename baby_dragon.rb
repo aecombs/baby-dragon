@@ -2,12 +2,29 @@ class BabyDragon
 
   attr_reader :fullness_level
 
-  def initialize(name)
+  def initialize(name, color = "gray")
     @name = name
     @is_asleep = false
     # The dragon is not hungry when @fullness_level is 10
     # The dragon is very hungry when @fullness_level is 0
     @fullness_level = 10
+    @color = color
+  end
+
+  #colors
+  def check_color(color)
+    case color
+      when color == "blue"
+
+      when color == "red"
+
+      when color == "green"
+
+      when color == "yellow"
+
+      else
+        return gray
+    end
   end
 
   def eat
