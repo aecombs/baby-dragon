@@ -12,19 +12,21 @@ class BabyDragon
   end
 
   #colors
-  def check_color(color)
-    case color
-      when color == "blue"
+  def discover_personality
+    case @color
+      when "blue"
+        puts "#{@name} is sick,tired and moving slowly!"
 
-      when color == "red"
+      when "red"
+        puts "#{@name} is mad, angry, disgusted and out of control!"
 
-      when color == "green"
+      when "green"
+        puts "#{@name} is happy, calm and ready to learn!"
 
-      when color == "yellow"
+      when "yellow"
+        puts "#{@name} is frustrated, worried, excited and anxious!"
+      end
 
-      else
-        return gray
-    end
   end
 
   def eat
@@ -68,15 +70,16 @@ class BabyDragon
 
 end
 
-puff = BabyDragon.new("Puff The Magic Dragon")
+puff = BabyDragon.new("Puff The Magic Dragon","green")
 
-puff.play
-puff.takes_a_nap
-puff.eat
-puff.play
-puff.takes_a_nap
-puff.eat
-
+# puff.play
+# puff.takes_a_nap
+# puff.eat
+puff.discover_personality
+# puff.play
+# puff.takes_a_nap
+# puff.eat
+puts "^^^^^^^^^^^^^"
 until (puff.fullness_level == 0)
   puff.play
   puff.takes_a_nap
