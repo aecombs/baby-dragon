@@ -1,6 +1,6 @@
 class BabyDragon
 
-  attr_reader :fullness_level
+  attr_reader :fullness_level, :name
 
   def initialize(name, color = "gray")
     @name = name
@@ -9,6 +9,7 @@ class BabyDragon
     # The dragon is very hungry when @fullness_level is 0
     @fullness_level = 10
     @color = color
+    @is_in_love = false
   end
 
   #colors
@@ -69,42 +70,58 @@ class BabyDragon
     end
   end
 
+  def falls_in_love
+    if @is_in_love
+      puts "They're already in love! #{self.name} isn't a cheater!"
+    else
+      @is_in_love = true
+      puts "
+             _)               (_
+            _) \\/\\%/\\ /\\_/\\ / (_
+           _)  \\(0 0) (0 0)//  (_
+           )_ -- \(oo) (oo)/ -- _(
+            )_ / /\\__,__//\\ \\ _(
+             )_ /   --;--   \\ _(
+         *.    ( (  )) ((  ) )    .*
+           '...(____)z z(____)...'
+      
+      "
+      puts "#{self.name} fell in love!"
+    end
+  end
+
   def dragon_eating_user
   puts " 
-                /|                                                            \n   
-          //^^^  ~~~~^^^^---___                   ^\            /|              \n
-      /c~~`'     ____          ^^^^             /| \\        /_ _\             \n
-      ~^^--; _\\\    ~~~---___     ~~~~        / '|  \\       | |             \n
-          /_/                 --        ~~~__/ ,  |   \\       \ \             \n
-          ~                      -        |\--;' |  |    ;;      | |            \n
-                                |          \   |    |    /     /  / \n
-                                |__ \  \     ~--|/~~\/~~|/     /  /   \n
-                               /---_.     \  \         |    /      |  | \n
-                             ;-/   ~\-----   ;         |           |  |            \n
-                          '--\_,--------'           |          |   |           \n
-                            / ____    _^^^_..        |        -                \n
-                            |       /^       ..       |       _    |            \n
-                            | ---- |      .           |      _    |             \n
-                             `     `.      |           |    -    -              \n
-                             ` .--  `      |           -__-    -     \n
-                              / ` -_.     /                   -    \n
-                          _-__ ---^^     /          _---_____--       \n
-                         ///  ///__ -__  / -____--~                \n
+                /|                                                            
+          //^^^  ~~~~^^^^---___                   ^\\            /|             
+      /c~~`'     ____          ^^^^             /| \\        /_ _\\            
+      ~^^--; _\\\\    ~~~---___     ~~~~        / '|  \\       | |            
+          /_/                 --        ~~~__/ ,  |   \\       \\ \\            
+          ~                      -        |\\--;' |  |    ;;      | |           
+                                |          \\   |    |    /     /  / 
+                                |__ \\  \\     ~--|/~~\\/~~|/     /  /   
+                               /---_.     \\  \\         |    /      |  | 
+                             ;-/   ~\\-----   ;         |           |  |            
+                          '--\\_,--------'           |          |   |           
+                            / ____    _^^^_..        |        -                
+                            |       /^       ..       |       _    |            
+                            | ---- |      .           |      _    |             
+                             `     `.      |           |    -    -              
+                             ` .--  `      |           -__-    -     
+                              / ` -_.     /                   -    
+                          _-__ ---^^     /          _---_____--       
+                         ///  ///__ -__  / -____--~                
     "
   end
 end
 
 puff = BabyDragon.new("Puff The Magic Dragon","green")
 
-# puff.play
-# puff.takes_a_nap
-# puff.eat
 puff.discover_personality
-# puff.play
-# puff.takes_a_nap
-# puff.eat
-puts "^^^^^^^^^^^^^"
-
+puff.play
+puff.takes_a_nap
+puff.eat
+puff.falls_in_love
 until (puff.fullness_level == 0)
   puff.play
   puff.takes_a_nap
