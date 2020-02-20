@@ -63,11 +63,35 @@ class BabyDragon
         @is_asleep = false
         puts "#{@name} woke up!"
       end
+      self.dragon_eating_user
       puts "#{@name} was super hangry! They ATE YOU! >:("
       exit
     end
   end
 
+  def dragon_eating_user
+  puts " 
+                /|                                                            \n   
+          //^^^  ~~~~^^^^---___                   ^\            /|              \n
+      /c~~`'     ____          ^^^^             /| \\        /_ _\             \n
+      ~^^--; _\\\    ~~~---___     ~~~~        / '|  \\       | |             \n
+          /_/                 --        ~~~__/ ,  |   \\       \ \             \n
+          ~                      -        |\--;' |  |    ;;      | |            \n
+                                |          \   |    |    /     /  / \n
+                                |__ \  \     ~--|/~~\/~~|/     /  /   \n
+                               /---_.     \  \         |    /      |  | \n
+                             ;-/   ~\-----   ;         |           |  |            \n
+                          '--\_,--------'           |          |   |           \n
+                            / ____    _^^^_..        |        -                \n
+                            |       /^       ..       |       _    |            \n
+                            | ---- |      .           |      _    |             \n
+                             `     `.      |           |    -    -              \n
+                             ` .--  `      |           -__-    -     \n
+                              / ` -_.     /                   -    \n
+                          _-__ ---^^     /          _---_____--       \n
+                         ///  ///__ -__  / -____--~                \n
+    "
+  end
 end
 
 puff = BabyDragon.new("Puff The Magic Dragon","green")
@@ -80,6 +104,7 @@ puff.discover_personality
 # puff.takes_a_nap
 # puff.eat
 puts "^^^^^^^^^^^^^"
+
 until (puff.fullness_level == 0)
   puff.play
   puff.takes_a_nap
